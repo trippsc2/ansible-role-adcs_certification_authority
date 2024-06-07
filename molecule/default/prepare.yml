@@ -1,0 +1,19 @@
+---
+- name: Prepare DC
+  hosts:
+    - dc
+  roles:
+    - role: trippsc2.create_testing_ad_domain
+
+- name: Prepare member server
+  hosts:
+    - windows_domain_members
+  gather_facts: false
+  roles:
+    - role: trippsc2.join_testing_ad_domain
+
+- name: Prepare standalone
+  hosts:
+    - windows_standalone
+  roles:
+    - role: trippsc2.configure_standalone_win_dns
