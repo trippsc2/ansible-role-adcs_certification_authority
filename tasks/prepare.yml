@@ -8,7 +8,7 @@
       community.windows.win_certificate_info:
         store_name: My
       register: _winca_cert_store
-    
+
     - name: Fail if no certificates exist
       ansible.builtin.assert:
         that:
@@ -29,6 +29,8 @@
       ansible.builtin.assert:
         that:
           - _winca_certs | length > 0
+        fail_msg: "No certificates with the expected common name '{{ winca_ca_cert_common_name }}' are installed."
+        success_msg: "At least one certificate with the expected common name '{{ winca_ca_cert_common_name }}' is installed."
 
     - name: Get latest expiring certificate
       ansible.builtin.set_fact:
