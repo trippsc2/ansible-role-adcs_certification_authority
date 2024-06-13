@@ -3,11 +3,11 @@ galaxy_info:
   author: Jim Tarpley
   namespace: trippsc2
   role_name: adcs_certification_authority
-  description: This role installs and configures a Windows machine as a Active Directory Certificate Services Certification Authority.
+  description: 'DEPRECATED: Use trippsc2.adcs.certification_authority instead.'
 
   license: MIT
 
-  min_ansible_version: '2.11'
+  min_ansible_version: '2.14'
 
   platforms:
     - name: Windows

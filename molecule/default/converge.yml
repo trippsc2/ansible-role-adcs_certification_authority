@@ -9,7 +9,7 @@
   hosts:
     - ssubca
   roles:
-    - role: trippsc2.adcs_sub_ca_certificate
+    - role: trippsc2.adcs.sub_ca_certificate
 
 - name: Converge for sub CA
   hosts:
